@@ -7,6 +7,7 @@ import ImgAffordable from "./../assets/features/cost.png"
 import ImgDelivery from "./../assets/features/fast-delivery.png"
 import FeaturesCard from '../components/FeaturesCard.jsx'
 import Button from '../components/Button.jsx'
+import { useNavigate } from 'react-router'
 
 const FEATURES_CONFIG = [
     {
@@ -25,7 +26,9 @@ const FEATURES_CONFIG = [
 ]
 
 function Home() {
+     let navigate = useNavigate();
     return (
+
         <div className='bg-[#F1F8E9]'>
              <Navbar />
             <div
@@ -35,7 +38,11 @@ function Home() {
                 <div className='min-h-[85vh]   flex flex-col items-center justify-center  gap-7 p-4 text-3xl font-bold text-white'>
                     <h1 className='text-[35px]! md:text-[50px]! text-center'>Fresh Vegetables, Straight from Local Farms</h1>
                     <h3 className='text-center text-[22px]! md:text-[30px]'>Taza sabzi delivered daily — healthy, affordable, and desi.</h3>
-                    <div><Button title={"Call Us"} variant='PRIMARY' size='md'/>
+                    <div className='flex gap-5 flex-col items-center justify-center md:flex-row w-[100%]'>
+                        <Button title={"Explore Now"} variant='PRIMARY' size='md' onClick={()=>{
+                           navigate("/vegitables");
+                        }} />
+                        <Button title={"Call Us"} variant='SECONDARY' size='md'/>
                     </div>
                 </div>
             </div>
