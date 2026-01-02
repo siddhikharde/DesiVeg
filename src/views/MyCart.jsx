@@ -18,9 +18,10 @@ function Cart() {
     setTotalPrice(price);
     },[cartItems])
   return (
-    <div className='min-h-screen bg-[#F1F8E9] ' >
+    <div className=' bg-[#F1F8E9] ' >
         <Navbar/>
-        <h2 className='text-center mt-5 font-bold text-4xl! text-[#1B5E20] '>
+        <div className='min-h-screen '>
+          <h2 className='text-center  mt-5 font-bold text-4xl! text-[#1B5E20] '>
           {
           cartItems.length===0 ? "Your Cart is Empty" : "My Cart"
           }
@@ -37,6 +38,7 @@ function Cart() {
                 )
             })
            }
+        </div>
         </div>
         <Footer/>
       
