@@ -15,9 +15,9 @@ function CallUs() {
   return (
    <div className='bg-[#F1F8E9]'>
     <Navbar/>
-     <div className='min-h-screen p-5'>
+     <div className='min-h-[80vh] p-5'>
       <div className='flex flex-col justify-center items-center p-5 gap-4'>
-        <h1 className=' font-bold mt-3 text-[#1B5E20]'> Call Us – DesiVeg</h1>
+        <h1 className=' font-bold mt-3 text-center text-[#1B5E20]'> Call Us – DesiVeg</h1>
         <p className='text-center text-2xl font-bold text-[#2e8434]'>Fresh vegetables, just a call away</p>
       </div>
       <div className='flex justify-center items-center gap-5 mt-10 flex-col md:flex-row mb-10'>

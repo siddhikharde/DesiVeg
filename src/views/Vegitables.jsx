@@ -40,7 +40,7 @@ function Vegitables() {
   return (
     <div>
         <Navbar refreshCart={refreshCart}/>
-        <div className="flex min-h-screen flex-col md:flex-row flex-wrap items-center justify-center p-5">
+        <div className="flex min-h-screen flex-col md:flex-row flex-wrap items-center justify-center pt-5 ">
         {
             vegitables.map((vegitable)=>{
                 const {id,name,description,price,unit,image,category,tags}=vegitable;

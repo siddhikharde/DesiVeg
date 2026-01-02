@@ -20,7 +20,7 @@ function Cart() {
   return (
     <div className=' bg-[#F1F8E9] ' >
         <Navbar/>
-        <div className='min-h-screen '>
+        <div className='min-h-[80vh] '>
           <h2 className='text-center  mt-5 font-bold text-4xl! text-[#1B5E20] '>
           {
           cartItems.length===0 ? "Your Cart is Empty" : "My Cart"
@@ -30,7 +30,7 @@ function Cart() {
           cartItems.length===0 ? null : `Total Items: ${cartItems.length} - Total Price: ₹${totalPrice}`
          } </p>
  
-        <div className='max-h-[500px] overflow-y-scroll p-5'>
+        <div className='max-h-[700px] flex flex-col gap-3 overflow-y-scroll p-5'>
            {
             cartItems.map((item)=>{
                 return(

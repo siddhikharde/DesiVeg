@@ -17,3 +17,6 @@ h5{
 h6{
   @apply text-base  ;
 }
+*{
+  box-sizing: border-box;
+}
