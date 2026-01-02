@@ -4,27 +4,37 @@ import vegitables from "./../data.js";
 import Button from "../components/Button.jsx";
 
 import React from 'react'
+import VegitableCard from "../components/VegitableCard.jsx";
+import { Toaster } from "react-hot-toast";
 
 function Vegitables() {
+
+    function addToCart(item){
+        const existingCart= JSON.parse(localStorage.getItem("cartItems") || "[]");
+        const itemsIndex=existingCart.findIndex(((cartItem)=>cartItem.id===item.id));
+        if(itemsIndex!=-1){
+          existingCart[itemsIndex]=item;
+
+        }else{
+          existingCart.push(item);
+        }
+      localStorage.setItem("cartItems",JSON.stringify(existingCart));
+
+    }
   return (
     <div>
         <Navbar/>
-        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center p-5">
+        <div className="flex min-h-screen flex-col md:flex-row flex-wrap items-center justify-center p-5">
         {
             vegitables.map((vegitable)=>{
+                const {id,name,description,price,unit,image,category,tags}=vegitable;
                 return(
-                    <div key={vegitable.id} className="m-4 py-6 px-5 border border-gray-300 rounded-lg shadow-md flex flex-col items-center w-[70%] md:w-[45%] lg:w-[27%]">
-                        <img src={vegitable.image} alt={vegitable.name} className="w-48 h-48 object-cover mb-4 rounded"/>
-                        <h2 className="text-2xl font-bold mb-2">{vegitable.name}</h2>
-                        <p className="text-gray-700 mb-2">{vegitable.description}</p>
-                        <p className="text-green-600 font-semibold mb-4">Price: ₹{vegitable.price} {vegitable.unit}</p>
-                       <Button title="Add to Cart" variant="TERTIARY" size="md"/>
-                        
-                        </div>
+                    <VegitableCard key={id} id={id} name={name} description={description} price={price} unit={unit} image={image} category={category} tags={tags} addToCart={addToCart}/>
                 )
             })
         }
       </div>
+      <Toaster/>
     </div>
   )
 }

@@ -1,0 +1,1 @@
+export const PIXABAY_API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
