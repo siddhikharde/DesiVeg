@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import vegitables from "./../data.js";
-import Button from "../components/Button.jsx";
-
 import React from 'react'
 import VegitableCard from "../components/VegitableCard.jsx";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 function Vegitables() {
-
+  const [refreshCart,setRefreshCart]=useState(false);
     function addToCart(item){
         const existingCart= JSON.parse(localStorage.getItem("cartItems") || "[]");
         const itemsIndex=existingCart.findIndex(((cartItem)=>cartItem.id===item.id));
@@ -19,11 +17,14 @@ function Vegitables() {
           existingCart.push(item);
         }
       localStorage.setItem("cartItems",JSON.stringify(existingCart));
-
+      toast.success("Item added to cart");
+     setTimeout(()=>{
+      setRefreshCart(!refreshCart);
+     },100)
     }
   return (
     <div>
-        <Navbar/>
+        <Navbar refreshCart={refreshCart}/>
         <div className="flex min-h-screen flex-col md:flex-row flex-wrap items-center justify-center p-5">
         {
             vegitables.map((vegitable)=>{

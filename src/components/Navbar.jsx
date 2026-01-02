@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Salad, ShoppingCart} from 'lucide-react';
-function Navbar() {
+function Navbar({refreshCart}) {
 const [cartItems, setCartItems] = useState(["test","test2"]);
+
+useEffect(()=>{
+  const existingCart=JSON.parse(localStorage.getItem("cartItems") || "[]");
+  setCartItems(existingCart);
+},[refreshCart])
 
   return (
     <div className='max-w-10/12 z-50 bg-[#2E7D32] mx-auto flex items-center justify-between px-7 py-3 sticky top-1 rounded-full'>
