@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { CircleMinus, CirclePlus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
+
 function VegitableCard({ id, name, description, price, unit, category, tags, addToCart }) {
     const [quantity, setQuantity] = useState(1);
     const [image, setImage] = useState("");
@@ -33,17 +34,18 @@ useEffect(() => {
   }, [name]);
 
     return (
-        <div key={id} className="m-4 py-6 px-5 border border-gray-300 rounded-lg shadow-md flex flex-col items-center w-[70%] md:w-[45%] lg:w-[27%]">
+        <div key={id} className="m-4 border border-gray-300 rounded-lg shadow-md flex flex-col items-center w-[70%] md:w-[45%] lg:w-[27%]">
              {loading ? (
         <div className="w-48 h-48 bg-gray-200 animate-pulse rounded mb-4" />
       ) : (
         <img
           src={image}
           alt={name}
-          className="w-48 h-48 object-cover mb-4 rounded-xl"
+          className="w-full h-48 object-cover  rounded"
         />
       )}
-            <h2 className="text-2xl font-bold mb-2">{name}</h2>
+            <div className='flex flex-col items-center p-4'>
+                <h2 className="text-2xl font-bold mb-2">{name}</h2>
             <p className="text-gray-500 text-center mb-2">{description}</p>
             <p className="text-green-600 font-semibold mb-2">Price: ₹{price} {unit}</p>
             <p className="text-gray-700 mb-2"> {tags.join(', ')}</p>
@@ -68,7 +70,11 @@ useEffect(() => {
                 addToCart({id, name, description, price, unit, quantity,image,category,tags,totalPrice:price*quantity})
             }} />
  
+            </div>
+            
+            
         </div>
+        
         
     )
 }
