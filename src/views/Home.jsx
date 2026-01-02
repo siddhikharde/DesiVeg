@@ -42,7 +42,9 @@ function Home() {
                         <Button title={"Explore Now"} variant='PRIMARY' size='md' onClick={()=>{
                            navigate("/vegitables");
                         }} />
-                        <Button title={"Call Us"} variant='SECONDARY' size='md'/>
+                        <Button title={"Call Us"} variant='SECONDARY' size='md' onClick={()=>{
+                            navigate("/callUs")
+                        }}/>
                     </div>
                 </div>
             </div>
