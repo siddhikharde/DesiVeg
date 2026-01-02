@@ -28,7 +28,7 @@ function Cart() {
         <p className='text-right  font-bold px-5 mt-1 text-lg text-[#2E7D32] '> {
           cartItems.length===0 ? null : `Total Items: ${cartItems.length} - Total Price: ₹${totalPrice}`
          } </p>
-
+ 
         <div className='max-h-[500px] overflow-y-scroll p-5'>
            {
             cartItems.map((item)=>{
