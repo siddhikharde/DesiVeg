@@ -20,11 +20,16 @@ function Cart() {
   return (
     <div className='min-h-screen bg-[#F1F8E9] ' >
         <Navbar/>
-        <p className='text-right  font-bold px-5 mt-5'>{
-          cartItems.length===0 ? "Your Cart is Empty" : `Total Items: ${cartItems.length} - Total Price: ₹${totalPrice}`
+        <h2 className='text-center mt-5 font-bold text-4xl! text-[#1B5E20] '>
+          {
+          cartItems.length===0 ? "Your Cart is Empty" : "My Cart"
+          }
+        </h2>
+        <p className='text-right  font-bold px-5 mt-1 text-lg text-[#2E7D32] '> {
+          cartItems.length===0 ? null : `Total Items: ${cartItems.length} - Total Price: ₹${totalPrice}`
          } </p>
 
-        <div className='max-h-[700px] overflow-y-scroll p-5'>
+        <div className='max-h-[500px] overflow-y-scroll p-5'>
            {
             cartItems.map((item)=>{
                 return(
