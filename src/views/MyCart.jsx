@@ -25,7 +25,7 @@ function Cart() {
           cartItems.length===0 ? "Your Cart is Empty" : "My Cart"
           }
         </h2>
-        <p className='text-right  font-bold px-5 mt-1 text-lg text-[#2E7D32] '> {
+        <p className='text-right py-2 text-[15px] px-5 mt-1 text-lg text-[#2E7D32] '> {
           cartItems.length===0 ? null : `Total Items: ${cartItems.length} - Total Price: ₹${totalPrice}`
          } </p>
  

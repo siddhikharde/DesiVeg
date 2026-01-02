@@ -16,9 +16,9 @@ function CartVegitableCard(
     return (
         <div>
             {
-                <div key={id} className='flex flex-col gap-2 md:flex-row bg-[#FFFFFF] border border-[#C8E6C9] p-5 m-4 rounded-2xl shadow-md'>
-                    <div className='md:w-90 w-full h-50 bg-amber-200'>
-                        <img src={image} alt={name} />
+                <div key={id} className='flex flex-col gap-2 md:flex-row bg-[#FFFFFF] border border-[#C8E6C9] p-2 m-4 rounded-2xl shadow-md'>
+                    <div className='md:w-90 w-full h-70 md:h-55 rounded-xl overflow-hidden'>
+                        <img src={image} alt={name} className='object-cover h-full w-full rounded-xl'/>
                     </div>
                     <div className='flex flex-col md:flex-row gap-5 w-full items-center justify-between p-5 '>
                         <div className='flex flex-col gap-1.5'>
